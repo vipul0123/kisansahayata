@@ -1,10 +1,13 @@
-import 'package:agriplant/pages/cart_page.dart';
+import 'package:agriplant/pages/agriplant';
 import 'package:agriplant/pages/explore_page.dart';
 import 'package:agriplant/pages/profile_page.dart';
 import 'package:agriplant/pages/services_page.dart';
 import 'package:badges/badges.dart' as badges;
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
+import 'package:agriplant/chatgpt/chatgpt.dart';
+import 'package:agriplant/weather/weather_page.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -14,7 +17,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final pages = [const ExplorePage(), const ServicesPage(), const CartPage(), const ProfilePage()];
+  final pages = [const ExplorePage(), const ServicesPage(), ChatGPTScreen(), WeatherPage()];
   int currentPageIndex = 0;
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -35,7 +38,7 @@ class _HomePageState extends State<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "Hi Wilson 👋🏾",
+              "Hi USER 👋🏾",
               style: Theme.of(context).textTheme.titleMedium,
             ),
             Text("Enjoy our services", style: Theme.of(context).textTheme.bodySmall)
@@ -48,7 +51,7 @@ class _HomePageState extends State<HomePage> {
               onPressed: () {},
               icon: badges.Badge(
                 badgeContent: const Text(
-                  '3',
+                  '1',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 12,
@@ -80,19 +83,19 @@ class _HomePageState extends State<HomePage> {
             activeIcon: Icon(IconlyBold.home),
           ),
           BottomNavigationBarItem(
-            icon: Icon(IconlyLight.call),
-            label: "Services",
-            activeIcon: Icon(IconlyBold.call),
+            icon: Icon(IconlyLight.infoSquare),
+            label: "Info",
+            activeIcon: Icon(IconlyBold.infoSquare),
           ),
           BottomNavigationBarItem(
-            icon: Icon(IconlyLight.buy),
-            label: "Cart",
-            activeIcon: Icon(IconlyBold.buy),
+            icon: Icon(IconlyLight.chat),
+            label: "Plant doctor",
+            activeIcon: Icon(IconlyBold.chat),
           ),
           BottomNavigationBarItem(
-            icon: Icon(IconlyLight.profile),
-            label: "Profile",
-            activeIcon: Icon(IconlyBold.profile),
+            icon: Icon(IconlyLight.location),
+            label: "Weather",
+            activeIcon: Icon(IconlyBold.location),
           ),
         ],
       ),

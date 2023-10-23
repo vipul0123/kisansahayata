@@ -71,7 +71,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                "Available in stock",
+                "Avg price",
                 style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                       color: Theme.of(context).colorScheme.primary,
                     ),
@@ -80,7 +80,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                 text: TextSpan(
                   children: [
                     TextSpan(
-                        text: "\$${widget.product.price}",
+                        text: "${widget.product.price}",
                         style: Theme.of(context).textTheme.titleLarge),
                     TextSpan(
                         text: "/${widget.product.unit}",
@@ -115,7 +115,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 12),
                 child: Text(
-                  "2 ${widget.product.unit}",
+                  "1 ${widget.product.unit}",
                   style: Theme.of(context).textTheme.titleMedium!.copyWith(
                         fontWeight: FontWeight.bold,
                       ),
@@ -196,8 +196,8 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
           const SizedBox(height: 20),
           FilledButton.icon(
               onPressed: () {},
-              icon: const Icon(IconlyLight.bag2),
-              label: const Text("Add to cart"))
+              icon: const Icon(IconlyLight.infoSquare),
+              label: const Text("Get more information"))
         ],
       ),
     );
